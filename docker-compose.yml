@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    image: villaltajose/backt
+    ports:
+      - "8080:8080"
+    networks:
+      - red_demo
+
+  postgresql:
+    image: postgres:latest
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: demo63
+    networks:
+      - red_demo
+
+networks:
+  red_demo:
